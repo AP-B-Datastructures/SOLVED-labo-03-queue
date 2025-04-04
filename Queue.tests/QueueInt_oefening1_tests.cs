@@ -15,11 +15,15 @@ namespace Queue.tests
             queue = new QueueInt();
         }
 
-        [TestMethod]
-        public void Enqueue_AddsElementToQueue()
+        [DataTestMethod]
+        [DataRow(10)]
+        [DataRow(101)]
+        [DataRow(0)]
+        [DataRow(-1)]
+        [DataRow(7291)]
+        public void Enqueue_AddsElementToQueue(int element)
         {
             // Arrange
-            int element = 10;
 
             //Act
             queue.Enqueue(element);

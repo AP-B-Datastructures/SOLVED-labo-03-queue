@@ -16,7 +16,7 @@ namespace Queue.tests
         }
 
         [TestMethod]
-        public void Push_StackIncreasesSize()
+        public void Enqueue_QueueIncreasesSize()
         {
             // Arrange
             for (int i = 0; i < 1000; i++)

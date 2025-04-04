@@ -18,13 +18,35 @@ namespace Queue.tests
         [TestMethod]
         public void IsEmpty_EmptyQueueIsEmpty()
         {
-            throw new NotImplementedException();
+            // Arrange
+
+            // Act
+            bool result = queue.IsEmpty;
+
+            // Assert
+            Assert.AreEqual(true, result);
         }
 
         [TestMethod]
         public void IsFull_FullQueueIsFull()
         {
-            throw new NotImplementedException();
+            // Arrange
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+            queue.Enqueue(6);
+            queue.Enqueue(7);
+            queue.Enqueue(8);
+            queue.Enqueue(9);
+            queue.Enqueue(10);
+
+            // Act
+            bool result = queue.IsFull;
+
+            // Assert
+            Assert.AreEqual(true, result);
         }
     }
 }

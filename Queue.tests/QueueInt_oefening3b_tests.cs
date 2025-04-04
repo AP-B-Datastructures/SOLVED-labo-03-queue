@@ -18,13 +18,38 @@ namespace Queue.tests
         [DataTestMethod]
         public void Enqueue_FirstInFirstOut()
         {
-            throw new NotImplementedException();
+            // Arrange
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+
+            // Act
+            int firstOut = queue.Dequeue();
+
+            // Assert
+            Assert.AreEqual(1, firstOut);
         }
 
         [DataTestMethod]
         public void Enqueue_EnqueueAllValuesKeepsInputOrder()
         {
-            throw new NotImplementedException();
+            // Arrange
+            int[] input = { 1, 2, 3, 4 };
+            for (var i = 0; i < input.Length; ++i)
+            {
+                queue.Enqueue(input[i]);
+            }
+
+            // Act
+            int[] output = new int[4];
+            for (var i = 0; i < input.Length; ++i)
+            {
+                output[i] = queue.Dequeue();
+            }
+
+            // Assert
+            CollectionAssert.AreEqual(input, output);
         }
     }
 }
